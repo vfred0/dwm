@@ -1,9 +1,8 @@
-/* See LICENSE file for copyright and license details. */
-
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int snap      = 32;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const unsigned int borderpx = 1;
+static const unsigned int snap = 32;
+static const int showbar = 1;
+static const int topbar = 1;
+static const int colorfultag = 1; 
 static const char *fonts[] = {"Iosevka:style:bold:size=10", "JetBrainsMono Nerd Font:style:bold:size=8" };
 
 #include "themes/catppuccin.h"
@@ -24,6 +23,10 @@ static const char *colors[][3]      = {
     [SchemeBtnPrev]    = { green,   black,  black },
     [SchemeBtnNext]    = { yellow,  black,  black },
     [SchemeBtnClose]   = { red,     black,  black },
+};
+
+static const int tagschemes[] = {
+    SchemeTag1, SchemeTag2, SchemeTag3, SchemeTag4, SchemeTag5
 };
 
 typedef struct {
