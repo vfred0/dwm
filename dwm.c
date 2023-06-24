@@ -64,7 +64,23 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel }; /* color schemes */
+enum {
+  SchemeNorm,
+  SchemeSel,
+  SchemeTitle,
+  SchemeTag,
+  SchemeTag1,
+  SchemeTag2,
+  SchemeTag3,
+  SchemeTag4,
+  SchemeTag5,
+  SchemeLayout,
+  TabSel,
+  TabNorm,
+  SchemeBtnPrev,
+  SchemeBtnNext,
+  SchemeBtnClose
+}; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
        NetWMWindowTypeDialog, NetClientList, NetLast }; /* EWMH atoms */
@@ -262,6 +278,8 @@ static void zoom(const Arg *arg);
 static void load_xresources(void);
 static void resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst);
 
+static void restart(const Arg *arg);
+
 static void hidewin(const Arg *arg);
 
 /* variables */
@@ -304,6 +322,7 @@ static Client* hiddenWinStack[hiddenWinStackMax];
 
 /* configuration, allows nested code to access above variables */
 #include "config.h"
+#include "movestack.c"
 
 struct Pertag {
 	unsigned int curtag, prevtag; /* current and previous tag */
@@ -2399,6 +2418,10 @@ show(Client *c)
 	XMapWindow(dpy, c->win);
 	setclientstate(c, NormalState);
 	arrange(c->mon);
+}
+
+void restart(const Arg *arg) {
+  running = 0;
 }
 
 int
