@@ -1,5 +1,12 @@
 static const unsigned int borderpx = 1;
 static const unsigned int snap = 32;
+static const unsigned int borderpx = 0;
+static const unsigned int gappih = 10;  
+static const unsigned int gappiv = 10;  
+static const unsigned int gappoh = 10;  
+static const unsigned int gappov = 10;  
+static int smartgaps = 0; 
+
 static const int showbar = 1;
 static const int topbar = 1;
 static const int colorfultag = 1; 
@@ -72,6 +79,7 @@ static const Rule rules[] = {
 	{ "Tk",            NULL,      NULL,           0,         1,          -1 },
 };
 
+#include "layouts_gaps.c"
 /* layout(s) */
 static const float mfact     = 0.5; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
