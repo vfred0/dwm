@@ -170,16 +170,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
-/*
- * Xresources preferences to load at startup
- */
-ResourcePref resources[] = {
-	{ "font",               STRING,  &font },
-	{ "color0",		STRING,  &normbgcolor },
-	{ "color8",		STRING,  &normbordercolor },
-	{ "foreground",		STRING,  &normfgcolor },
-	{ "color8",             STRING,  &selbgcolor },
-	{ "color7",		STRING,  &selbordercolor },
-	{ "foreground",         STRING,  &selfgcolor },
-};
