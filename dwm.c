@@ -250,10 +250,8 @@ static void sigchld(int unused);
 static void spawn(const Arg *arg);
 static void tag(const Arg *arg);
 static void tagmon(const Arg *arg);
-static void tile(Monitor *m);
 static void togglebar(const Arg *arg);
 static void togglefloating(const Arg *arg);
-static void togglescratch(const Arg *arg);
 static void toggletag(const Arg *arg);
 static void toggleview(const Arg *arg);
 static void unfocus(Client *c, int setfocus);
@@ -276,12 +274,9 @@ static int xerror(Display *dpy, XErrorEvent *ee);
 static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
-static void restart(const Arg *arg);
 static void movestack(const Arg *arg);
-
 static void hidewin(const Arg *arg);
-static void bstack(Monitor *m);
-static void bstackhoriz(Monitor *m);
+static void setcfact(const Arg *arg);
 
 /* variables */
 static const char broken[] = "broken";
