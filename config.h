@@ -63,20 +63,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class           instance   title           tags mask  isfloating  monitor */
-	{ "St",	           NULL,      NULL,           1 << 0,    0,          -1 },
-	{ "firefox",       NULL,      NULL,           1 << 1,    0,          -1 },
-	{ "Soffice",       NULL,      NULL,           1 << 2,    0,          -1 },
-	{ NULL,	           NULL,      "LibreOffice",  1 << 2,    0,          -1 },
-	{ "Gimp",          NULL,      NULL,           1 << 2,    0,          -1 },
-	{ "Inkscape",      NULL,      NULL,           1 << 2,    0,          -1 },
-	{ "mpv",           NULL,      NULL,           0,         1,          -1 },
-	{ "Nsxiv",         NULL,      NULL,           0,         1,          -1 },
-	{ "st-floating",   NULL,      NULL,           0,         1,          -1 },
 	{ "spterm",        NULL,      NULL,           SPTAG(0),  1,          -1 },
 	{ "spmusic",       NULL,      NULL,           SPTAG(1),  1,          -1 },
 	{ "spcalc",        NULL,      NULL,           SPTAG(2),  1,          -1 },
-	{ NULL,            NULL,      "Event Tester", 0,         0,          -1 }, /* xev */
-	{ "Tk",            NULL,      NULL,           0,         1,          -1 },
 };
 
 #include "layouts_gaps.c"
@@ -88,9 +77,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "TTT",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "TTT",      bstack },    
 	{ "[M]",      monocle },
+	{ "><>",      NULL },  
 };
 
 #define MODKEY Mod4Mask
