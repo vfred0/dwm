@@ -4,6 +4,10 @@ static const int showbar = 1;
 static const int topbar = 1;
 static const int colorfultag = 1; 
 static const char *fonts[] = {"Iosevka:style:bold:size=10", "JetBrainsMono Nerd Font:style:bold:size=8" };
+static const unsigned int tag_underline_padding = 5; 
+static const unsigned int tag_underline_height = 2; 
+static const unsigned int tag_underline_above = 0; 
+static const int is_tag_underline_for_active = 0; 
 
 #include "themes/catppuccin.h"
 static const char *colors[][3]      = {

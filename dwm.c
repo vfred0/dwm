@@ -824,9 +824,9 @@ drawbar(Monitor *m)
 		w = TEXTW(tags[i]);
 		drw_setscheme(drw, scheme[occ & 1 << i ? (m->colorfultag ? tagschemes[i] : SchemeSel) : SchemeTag]);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		if (occ & 1 << i) {
-			drw_rect(drw, x + boxs, boxs, boxw, boxw, m == selmon && selmon->sel && selmon->sel->tags & 1 << i, urg & 1 << i);
-		}
+		if (is_tag_underline_for_active || m->tagset[m->seltags] &1 << i)  {
+        	drw_rect(drw, x+tag_underline_padding, bh - tag_underline_height - tag_underline_above, w - (tag_underline_padding * 2), tag_underline_height, m == selmon && selmon->sel && selmon->sel->tags & 1 << i, urg & 1 << i);        	
+    	}		
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
